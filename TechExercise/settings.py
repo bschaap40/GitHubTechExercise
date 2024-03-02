@@ -28,6 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['djangoapp']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
