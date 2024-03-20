@@ -15,7 +15,8 @@
                 <th>Nation</th>
                 <th>Position</th>
                 <th>Number</th>
-                <th>Actions</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +29,12 @@
                 <td>{{ player.number }}</td>
                 <td>
                     <a href="{% url 'player_edit' player.id %}">Edit</a>
-                    <a href="">Delete</a>
+                </td>
+                <td>
+                    <form action="{% url 'delete_player' player.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}

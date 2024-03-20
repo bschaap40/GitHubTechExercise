@@ -1,8 +1,8 @@
-from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView
 from django.urls import reverse_lazy
 from .models import Player
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect
+
 
 class PlayerListView(ListView):
     model = Player
@@ -21,3 +21,7 @@ class PlayerEditView(UpdateView):
     fields = ['name', 'age', 'nation', 'position', 'number']
     success_url = reverse_lazy('player_list')
 
+def delete_player(request, pk):
+    player = get_object_or_404(Player, pk=pk)
+    player.delete()
+    return redirect('player_list')
