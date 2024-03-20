@@ -11,7 +11,13 @@ class PlayerListView(ListView):
 
 class AddPlayer(CreateView):
     model = Player
-    fields = ['name', 'age', 'position', 'number']
+    fields = ['name', 'age', 'nation', 'position', 'number']
     template_name = 'add_player.html'
+    success_url = reverse_lazy('player_list')
+
+class PlayerEditView(UpdateView):
+    model = Player
+    template_name = 'player_edit.html'
+    fields = ['name', 'age', 'nation', 'position', 'number']
     success_url = reverse_lazy('player_list')
 

@@ -12,6 +12,7 @@
             <tr>
                 <th>Name</th>
                 <th>Age</th>
+                <th>Nation</th>
                 <th>Position</th>
                 <th>Number</th>
                 <th>Actions</th>
@@ -22,11 +23,12 @@
             <tr>
                 <td>{{ player.name }}</td>
                 <td>{{ player.age }}</td>
+                <td>{{ player.nation }}</td>
                 <td>{{ player.position }}</td>
                 <td>{{ player.number }}</td>
                 <td>
                     <a href="{% url 'player_edit' player.id %}">Edit</a>
-                    <a href="{% url 'player_delete' player.id %}">Delete</a>
+                    <a href="">Delete</a>
                 </td>
             </tr>
             {% endfor %}
