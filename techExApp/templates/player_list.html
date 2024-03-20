@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player List</title>
+</head>
+<body>
+    <h1>Player List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.age }}</td>
+                <td>{{ player.position }}</td>
+                <td>{{ player.number }}</td>
+                <td>
+                    <a href="{% url 'player_edit' player.id %}">Edit</a>
+                    <a href="{% url 'player_delete' player.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add_player' %}">Add Player</a>
+</body>
+</html>
