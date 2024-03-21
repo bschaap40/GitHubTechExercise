@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Player List</title>
 </head>
-<body>
+<style>
+    .container {
+    padding-left: 10px;
+    }
+    td, th {
+    padding: 3px;
+}
+</style>
+<body class="container">
     <h1>Player List</h1>
     <form method="GET" action="{% url 'player_list' %}">
         <input type="text" name="q" placeholder="Search by name">
