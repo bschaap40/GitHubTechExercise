@@ -1,2 +1,3 @@
 # created by virtualenv automatically
-
+website/__pycache__
+website/db.sqlite3
