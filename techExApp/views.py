@@ -2,12 +2,20 @@ from django.views.generic import ListView, CreateView, UpdateView
 from django.urls import reverse_lazy
 from .models import Player
 from django.shortcuts import get_object_or_404, redirect
+from django.db.models import Q
 
 
 class PlayerListView(ListView):
     model = Player
     template_name = 'player_list.html'
     context_object_name = 'players'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Player.objects.filter(Q(name__icontains=query))
+        else:
+            return Player.objects.all()
 
 class AddPlayer(CreateView):
     model = Player
