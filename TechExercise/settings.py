@@ -124,4 +124,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['http://ec2-3-129-15-147.us-east-2.compute.amazonaws.com/']
+CSRF_TRUSTED_ORIGINS = ['http://ec2-3-129-15-147.us-east-2.compute.amazonaws.com']
